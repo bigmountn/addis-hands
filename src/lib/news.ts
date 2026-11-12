@@ -32,7 +32,20 @@ export async function getNewsPost(
 }
 
 export async function saveNewsPosts(posts: NewsPost[]) {
-  await fs.writeFile(newsPath, JSON.stringify(posts, null, 2) + "\n", "utf8");
+  try {
+    await fs.writeFile(newsPath, JSON.stringify(posts, null, 2) + "\n", "utf8");
+  } catch (error) {
+    const code =
+      error && typeof error === "object" && "code" in error
+        ? String((error as { code?: string }).code)
+        : "";
+    if (code === "EROFS" || code === "EACCES" || code === "EPERM") {
+      throw new Error(
+        "Vercel 등 읽기 전용 환경에서는 관리자 삭제가 저장되지 않습니다. 로컬에서 data/news.json을 수정한 뒤 GitHub에 푸시하세요.",
+      );
+    }
+    throw error;
+  }
 }
 
 export async function upsertNewsPost(post: NewsPost) {

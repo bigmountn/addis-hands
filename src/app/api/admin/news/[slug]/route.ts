@@ -129,11 +129,22 @@ export async function DELETE(
 ) {
   const denied = await requireAdmin();
   if (denied) return denied;
-  const { slug } = await context.params;
-  const existing = await getNewsPost(slug, { includeDrafts: true });
-  if (!existing) {
-    return NextResponse.json({ error: "뉴스를 찾을 수 없습니다." }, { status: 404 });
+
+  try {
+    const { slug } = await context.params;
+    const existing = await getNewsPost(slug, { includeDrafts: true });
+    if (!existing) {
+      return NextResponse.json(
+        { error: "뉴스를 찾을 수 없습니다." },
+        { status: 404 },
+      );
+    }
+    await deleteNewsPost(slug);
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error(error);
+    const message =
+      error instanceof Error ? error.message : "뉴스 삭제 실패";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
-  await deleteNewsPost(slug);
-  return NextResponse.json({ ok: true });
 }

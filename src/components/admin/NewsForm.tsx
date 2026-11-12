@@ -78,18 +78,27 @@ export function NewsForm({ mode, initial }: Props) {
 
   async function onDelete() {
     if (!initial || !confirm(`정말 삭제할까요? (${initial.slug})`)) return;
-    const response = await fetch(
-      `/api/admin/news/${encodeURIComponent(initial.slug)}`,
-      { method: "DELETE" },
-    );
-    if (!response.ok) {
-      const data = (await response.json()) as { error?: string };
+    setFormStatus("saving");
+    setMessage("");
+    try {
+      const response = await fetch(
+        `/api/admin/news/${encodeURIComponent(initial.slug)}`,
+        { method: "DELETE" },
+      );
+      const data = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+      if (!response.ok) {
+        throw new Error(data.error || "삭제 실패");
+      }
+      router.push("/admin/news");
+      router.refresh();
+    } catch (err) {
       setFormStatus("error");
-      setMessage(data.error || "삭제 실패");
-      return;
+      setMessage(err instanceof Error ? err.message : "삭제 실패");
+    } finally {
+      setFormStatus((prev) => (prev === "error" ? prev : "idle"));
     }
-    router.push("/admin/news");
-    router.refresh();
   }
 
   return (
