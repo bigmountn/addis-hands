@@ -16,6 +16,11 @@ export type ProductStatus = "draft" | "published" | "hidden";
 
 export type NewsStatus = "draft" | "published";
 
+export type NewsSource = {
+  label: string;
+  url: string;
+};
+
 export type NewsPost = {
   slug: string;
   /** ISO date string YYYY-MM-DD */
@@ -25,6 +30,10 @@ export type NewsPost = {
   summary: LocalizedString;
   body: LocalizedString;
   coverImage?: string;
+  /** Extra photos shown in the article */
+  gallery?: string[];
+  /** Optional press / reference links */
+  sources?: NewsSource[];
 };
 
 export type Company = {

@@ -37,6 +37,11 @@ export default async function NewsDetailPage({
   if (!post) notFound();
 
   const t = await getTranslations("News");
+  const paragraphs = tLocal(post.body, locale)
+    .split(/\n\n+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const gallery = post.gallery ?? [];
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -74,9 +79,59 @@ export default async function NewsDetailPage({
         </div>
       ) : null}
 
-      <div className="mt-10 whitespace-pre-line text-base leading-relaxed text-[var(--ink)]/85 md:text-lg">
-        {tLocal(post.body, locale)}
+      <div className="mt-10 space-y-8">
+        {paragraphs.map((paragraph, index) => (
+          <div key={`${index}-${paragraph.slice(0, 24)}`} className="space-y-8">
+            <p className="text-base leading-relaxed text-[var(--ink)]/85 md:text-lg whitespace-pre-line">
+              {paragraph}
+            </p>
+            {gallery[index] ? (
+              <MediaFrame
+                src={gallery[index]}
+                alt={`${tLocal(post.title, locale)} — ${index + 1}`}
+                aspectClassName="aspect-[4/3]"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            ) : null}
+          </div>
+        ))}
+
+        {gallery.length > paragraphs.length ? (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {gallery.slice(paragraphs.length).map((src, index) => (
+              <MediaFrame
+                key={src}
+                src={src}
+                alt={`${tLocal(post.title, locale)} — extra ${index + 1}`}
+                aspectClassName="aspect-[4/3]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
+
+      {post.sources && post.sources.length > 0 ? (
+        <aside className="mt-12 border-t border-[var(--line)] pt-6">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--olive)]">
+            {t("sources")}
+          </p>
+          <ul className="space-y-2 text-sm">
+            {post.sources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--clay)] underline-offset-4 hover:underline"
+                >
+                  {source.label} →
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      ) : null}
     </article>
   );
 }

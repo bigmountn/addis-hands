@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import type { LocalizedString, NewsPost, NewsStatus } from "@/data/types";
+import type {
+  LocalizedString,
+  NewsPost,
+  NewsSource,
+  NewsStatus,
+} from "@/data/types";
 import { isValidSlug, requireAdmin } from "@/lib/admin-api";
 import { fillLocalized } from "@/lib/localized";
 import {
@@ -15,7 +20,20 @@ type Body = {
   summary?: Partial<LocalizedString> | string;
   body?: Partial<LocalizedString> | string;
   coverImage?: string;
+  gallery?: string[];
+  sources?: NewsSource[];
 };
+
+function normalizeSources(sources: Body["sources"]): NewsSource[] | undefined {
+  if (!Array.isArray(sources)) return undefined;
+  const cleaned = sources
+    .map((item) => ({
+      label: String(item?.label ?? "").trim(),
+      url: String(item?.url ?? "").trim(),
+    }))
+    .filter((item) => item.label && item.url);
+  return cleaned.length > 0 ? cleaned : undefined;
+}
 
 function isValidDate(value: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value);
@@ -87,6 +105,14 @@ export async function PUT(
         body.coverImage !== undefined
           ? String(body.coverImage).trim() || undefined
           : existing.coverImage,
+      gallery:
+        body.gallery !== undefined
+          ? body.gallery.map(String).filter(Boolean)
+          : existing.gallery,
+      sources:
+        body.sources !== undefined
+          ? normalizeSources(body.sources)
+          : existing.sources,
     };
 
     await upsertNewsPost(post);

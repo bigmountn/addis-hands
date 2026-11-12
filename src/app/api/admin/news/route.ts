@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import type { LocalizedString, NewsPost, NewsStatus } from "@/data/types";
+import type {
+  LocalizedString,
+  NewsPost,
+  NewsSource,
+  NewsStatus,
+} from "@/data/types";
 import { isValidSlug, requireAdmin } from "@/lib/admin-api";
 import { fillLocalized } from "@/lib/localized";
 import { getNewsPost, getNewsPosts, upsertNewsPost } from "@/lib/news";
@@ -12,7 +17,20 @@ type Body = {
   summary?: Partial<LocalizedString> | string;
   body?: Partial<LocalizedString> | string;
   coverImage?: string;
+  gallery?: string[];
+  sources?: NewsSource[];
 };
+
+function normalizeSources(sources: Body["sources"]): NewsSource[] | undefined {
+  if (!Array.isArray(sources)) return undefined;
+  const cleaned = sources
+    .map((item) => ({
+      label: String(item?.label ?? "").trim(),
+      url: String(item?.url ?? "").trim(),
+    }))
+    .filter((item) => item.label && item.url);
+  return cleaned.length > 0 ? cleaned : undefined;
+}
 
 function isValidDate(value: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value);
@@ -73,6 +91,10 @@ export async function POST(request: Request) {
       summary,
       body: bodyText,
       coverImage: String(body.coverImage ?? "").trim() || undefined,
+      gallery: Array.isArray(body.gallery)
+        ? body.gallery.map(String).filter(Boolean)
+        : [],
+      sources: normalizeSources(body.sources),
     };
 
     await upsertNewsPost(post);

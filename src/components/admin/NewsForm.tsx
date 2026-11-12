@@ -28,6 +28,7 @@ export function NewsForm({ mode, initial }: Props) {
     initial?.body ?? emptyLocalized(),
   );
   const [coverImage, setCoverImage] = useState(initial?.coverImage);
+  const [gallery, setGallery] = useState<string[]>(initial?.gallery ?? []);
   const [formStatus, setFormStatus] = useState<"idle" | "saving" | "error">(
     "idle",
   );
@@ -46,6 +47,8 @@ export function NewsForm({ mode, initial }: Props) {
       summary,
       body,
       coverImage,
+      gallery,
+      sources: initial?.sources,
     };
 
     try {
@@ -151,10 +154,11 @@ export function NewsForm({ mode, initial }: Props) {
         kind="news"
         slug={slug.trim().toLowerCase()}
         coverImage={coverImage}
-        gallery={[]}
-        showGallery={false}
-        onChange={({ coverImage: nextCover }) => {
+        gallery={gallery}
+        showGallery
+        onChange={({ coverImage: nextCover, gallery: nextGallery }) => {
           setCoverImage(nextCover);
+          setGallery(nextGallery);
         }}
       />
 
