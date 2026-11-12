@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cfc0ab"/>
+      <stop offset="100%" stop-color="#f4eee6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="48" y="48" width="1104" height="804" fill="none" stroke="#2a221c" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="80" y="120" fill="#2a221c" fill-opacity="0.55" font-family="Georgia, serif" font-size="28">Everyday Key Case</text>
+  <text x="80" y="170" fill="#2a221c" fill-opacity="0.4" font-family="Helvetica, Arial, sans-serif" font-size="20">Product cover</text>
+  <circle cx="600" cy="470" r="110" fill="#2a221c" fill-opacity="0.08"/>
+  <rect x="540" y="430" width="120" height="80" rx="8" fill="#2a221c" fill-opacity="0.12"/>
+</svg>

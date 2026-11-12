@@ -1,0 +1,339 @@
+[
+  {
+    "slug": "natural-cowhide-card-wallet",
+    "companySlug": "fif-trading",
+    "name": {
+      "en": "Natural Cowhide Card Wallet",
+      "ko": "천연 소가죽 카드지갑",
+      "ja": "天然牛革カードケース",
+      "zh": "天然牛皮卡包"
+    },
+    "category": {
+      "en": "Wallets",
+      "ko": "지갑",
+      "ja": "ウォレット",
+      "zh": "钱包"
+    },
+    "summary": {
+      "en": "Compact handmade card wallet with natural grain character. A practical entry SKU for buyers testing Ethiopian leather goods.",
+      "ko": "천연 결이 살아있는 컴팩트 핸드메이드 카드지갑. 에티오피아 가죽제품을 시험 도입하는 바이어를 위한 입문 SKU입니다.",
+      "ja": "天然の表情を残したコンパクトなハンドメイドカードケース。エチオピアレザーを試すバイヤー向けのエントリーSKUです。",
+      "zh": "保留天然纹路的紧凑手工卡包，适合想试销埃塞俄比亚皮具的买家作为入门SKU。"
+    },
+    "material": {
+      "en": "100% natural cowhide",
+      "ko": "천연 소가죽 100%",
+      "ja": "天然牛革100%",
+      "zh": "100%天然牛皮"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "50 pcs",
+    "leadTime": "3-5 weeks",
+    "priceRange": "FOB quote on request",
+    "featured": true,
+    "coverImage": "/media/products/natural-cowhide-card-wallet/cover.svg",
+    "gallery": [
+      "/media/products/natural-cowhide-card-wallet/gallery-1.svg",
+      "/media/products/natural-cowhide-card-wallet/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "vertical-burgundy-card-holder",
+    "companySlug": "fif-trading",
+    "name": {
+      "en": "Vertical Burgundy Card Holder",
+      "ko": "버티컬 버건디 카드홀더",
+      "ja": "縦型バーガンディーカードホルダー",
+      "zh": "竖款勃艮第红卡夹"
+    },
+    "category": {
+      "en": "Wallets",
+      "ko": "지갑",
+      "ja": "ウォレット",
+      "zh": "钱包"
+    },
+    "summary": {
+      "en": "Vertical format card holder in a warm burgundy tone. Designed for buyers seeking distinctive colorways beyond basic black and brown.",
+      "ko": "따뜻한 버건디 톤의 세로형 카드홀더. 기본 블랙·브라운을 넘어선 차별 컬러를 찾는 바이어용입니다.",
+      "ja": "暖かみのあるバーガンディーの縦型カードホルダー。定番の黒・茶以外のカラーを求めるバイヤー向けです。",
+      "zh": "暖勃艮第红竖款卡夹，面向希望突破基础黑棕色系的买家。"
+    },
+    "material": {
+      "en": "Natural cowhide",
+      "ko": "천연 소가죽",
+      "ja": "天然牛革",
+      "zh": "天然牛皮"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "50 pcs",
+    "leadTime": "3-5 weeks",
+    "priceRange": "FOB quote on request",
+    "featured": true,
+    "coverImage": "/media/products/vertical-burgundy-card-holder/cover.svg",
+    "gallery": [
+      "/media/products/vertical-burgundy-card-holder/gallery-1.svg",
+      "/media/products/vertical-burgundy-card-holder/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "olive-belt-minimal",
+    "companySlug": "addis-craft-atelier",
+    "name": {
+      "en": "Olive Minimal Leather Belt",
+      "ko": "올리브 미니멀 가죽 벨트",
+      "ja": "オリーブミニマルレザーベルト",
+      "zh": "橄榄色极简皮带"
+    },
+    "category": {
+      "en": "Belts",
+      "ko": "벨트",
+      "ja": "ベルト",
+      "zh": "腰带"
+    },
+    "summary": {
+      "en": "Clean-line belt in olive leather for fashion and lifestyle buyers. Available for colorway discussion and private label labeling.",
+      "ko": "패션·라이프스타일 바이어를 위한 올리브 가죽 클린라인 벨트. 컬러웨이·자체 라벨 협의가 가능합니다.",
+      "ja": "ファッション・ライフスタイル向けのオリーブ革クリーンラインベルト。カラーウェイやプライベートラベル相談が可能です。",
+      "zh": "面向时尚与生活方式买家的橄榄色极简皮带，可协商色系与自有品牌贴标。"
+    },
+    "material": {
+      "en": "Finished cowhide leather",
+      "ko": "마감 소가죽",
+      "ja": "仕上げ牛革",
+      "zh": "成品牛皮"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "100 pcs",
+    "leadTime": "4-6 weeks",
+    "priceRange": "FOB quote on request",
+    "featured": true,
+    "coverImage": "/media/products/olive-belt-minimal/cover.svg",
+    "gallery": [
+      "/media/products/olive-belt-minimal/gallery-1.svg",
+      "/media/products/olive-belt-minimal/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "sand-travel-pouch",
+    "companySlug": "addis-craft-atelier",
+    "name": {
+      "en": "Sand Travel Pouch",
+      "ko": "샌드 트래블 파우치",
+      "ja": "サンドトラベルポーチ",
+      "zh": "沙色旅行收纳袋"
+    },
+    "category": {
+      "en": "Pouches",
+      "ko": "파우치",
+      "ja": "ポーチ",
+      "zh": "收纳袋"
+    },
+    "summary": {
+      "en": "Soft-structure travel pouch with gift-ready finishing. Useful for retail assortments and corporate gift programs.",
+      "ko": "선물용 마감의 소프트 구조 트래블 파우치. 리테일 구성과 기업 선물 프로그램에 적합합니다.",
+      "ja": "ギフト向け仕上げのソフト構造トラベルポーチ。小売アソートや法人ギフトに適します。",
+      "zh": "礼品级软结构旅行收纳袋，适合零售组合与企业礼品项目。"
+    },
+    "material": {
+      "en": "Cowhide with cotton lining",
+      "ko": "소가죽 + 코튼 안감",
+      "ja": "牛革＋コットン裏地",
+      "zh": "牛皮配棉内衬"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "80 pcs",
+    "leadTime": "4-6 weeks",
+    "featured": false,
+    "coverImage": "/media/products/sand-travel-pouch/cover.svg",
+    "gallery": [
+      "/media/products/sand-travel-pouch/gallery-1.svg",
+      "/media/products/sand-travel-pouch/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "workshop-sample-hide-pack",
+    "companySlug": "highland-hideworks",
+    "name": {
+      "en": "Workshop Sample Hide Pack",
+      "ko": "워크숍 샘플 하이딩 팩",
+      "ja": "工房サンプルハイドパック",
+      "zh": "工坊样品皮革包"
+    },
+    "category": {
+      "en": "Materials",
+      "ko": "소재",
+      "ja": "素材",
+      "zh": "材料"
+    },
+    "summary": {
+      "en": "Curated leather sample pack for product developers and buyers evaluating Ethiopian tannage and finish quality.",
+      "ko": "에티오피아 태닝·마감 품질을 검토하는 제품 개발자·바이어용 큐레이션 가죽 샘플 팩입니다.",
+      "ja": "エチオピアの鞣し・仕上げ品質を評価する開発者・バイヤー向けのキュレーション革サンプルパックです。",
+      "zh": "面向评估埃塞俄比亚鞣制与加工品质的产品开发者与买家的精选皮革样品包。"
+    },
+    "material": {
+      "en": "Assorted finished hides",
+      "ko": "마감 가죽 혼합",
+      "ja": "仕上げ革アソート",
+      "zh": "成品皮革组合"
+    },
+    "origin": {
+      "en": "Ethiopia",
+      "ko": "에티오피아",
+      "ja": "エチオピア",
+      "zh": "埃塞俄比亚"
+    },
+    "moq": "10 packs",
+    "leadTime": "2-3 weeks",
+    "featured": true,
+    "coverImage": "/media/products/workshop-sample-hide-pack/cover.svg",
+    "gallery": [
+      "/media/products/workshop-sample-hide-pack/gallery-1.svg",
+      "/media/products/workshop-sample-hide-pack/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "everyday-key-case",
+    "companySlug": "highland-hideworks",
+    "name": {
+      "en": "Everyday Key Case",
+      "ko": "에브리데이 키케이스",
+      "ja": "エブリデイキーケース",
+      "zh": "日常钥匙包"
+    },
+    "category": {
+      "en": "Small leather goods",
+      "ko": "소가죽 소품",
+      "ja": "スモールレザーグッズ",
+      "zh": "小皮件"
+    },
+    "summary": {
+      "en": "Durable key case built for everyday carry collections and add-on orders alongside wallets.",
+      "ko": "데일리 캐리 컬렉션과 지갑 연계 추가 주문에 맞는 내구성 키케이스입니다.",
+      "ja": "デイリーキャリーやウォレットとの追加注文に合う耐久キーケースです。",
+      "zh": "适合日常携带系列及与钱包搭配加单的耐用钥匙包。"
+    },
+    "material": {
+      "en": "Finished cowhide",
+      "ko": "마감 소가죽",
+      "ja": "仕上げ牛革",
+      "zh": "成品牛皮"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "100 pcs",
+    "leadTime": "3-4 weeks",
+    "coverImage": "/media/products/everyday-key-case/cover.svg",
+    "gallery": [
+      "/media/products/everyday-key-case/gallery-1.svg",
+      "/media/products/everyday-key-case/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "impact-stitch-tote",
+    "companySlug": "bole-stitch-collective",
+    "name": {
+      "en": "Impact Stitch Tote",
+      "ko": "임팩트 스티치 토트",
+      "ja": "インパクトステッチトート",
+      "zh": "影响力缝线托特包"
+    },
+    "category": {
+      "en": "Bags",
+      "ko": "가방",
+      "ja": "バッグ",
+      "zh": "箱包"
+    },
+    "summary": {
+      "en": "Tote combining leather panels and textile stitch details, with a production story centered on women artisans.",
+      "ko": "가죽 패널과 텍스타일 스티치 디테일을 결합한 토트. 여성 장인 중심의 생산 스토리를 담습니다.",
+      "ja": "レザーパネルとテキスタイルのステッチを組み合わせたトート。女性職人を中心とした生産ストーリーを伝えます。",
+      "zh": "结合皮革面板与纺织缝线细节的托特包，讲述以女性工匠为中心的生产故事。"
+    },
+    "material": {
+      "en": "Leather and textile mix",
+      "ko": "가죽·텍스타일 혼합",
+      "ja": "レザー＆テキスタイル混材",
+      "zh": "皮革与纺织混材"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "60 pcs",
+    "leadTime": "5-7 weeks",
+    "featured": true,
+    "coverImage": "/media/products/impact-stitch-tote/cover.svg",
+    "gallery": [
+      "/media/products/impact-stitch-tote/gallery-1.svg",
+      "/media/products/impact-stitch-tote/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "hand-stitch-card-sleeve",
+    "companySlug": "bole-stitch-collective",
+    "name": {
+      "en": "Hand-Stitch Card Sleeve",
+      "ko": "핸드스티치 카드 슬리브",
+      "ja": "ハンドステッチカードスリーブ",
+      "zh": "手缝卡片套"
+    },
+    "category": {
+      "en": "Wallets",
+      "ko": "지갑",
+      "ja": "ウォレット",
+      "zh": "钱包"
+    },
+    "summary": {
+      "en": "Slim card sleeve highlighting visible hand stitching. Strong storytelling SKU for conscious retail buyers.",
+      "ko": "핸드스티치가 드러나는 슬림 카드 슬리브. 의식 있는 리테일 바이어를 위한 스토리텔링 SKU입니다.",
+      "ja": "ハンドステッチが見えるスリムなカードスリーブ。意識の高い小売バイヤー向けのストーリーSKUです。",
+      "zh": "突出手缝细节的纤薄卡片套，适合注重故事的零售买家。"
+    },
+    "material": {
+      "en": "Vegetable-inspired finished leather",
+      "ko": "베지터블 무드 마감 가죽",
+      "ja": "ベジタブル調仕上げレザー",
+      "zh": "植鞣风格成品皮革"
+    },
+    "origin": {
+      "en": "Made in Ethiopia",
+      "ko": "에티오피아산",
+      "ja": "エチオピア製",
+      "zh": "埃塞俄比亚制造"
+    },
+    "moq": "80 pcs",
+    "leadTime": "4-5 weeks",
+    "coverImage": "/media/products/hand-stitch-card-sleeve/cover.svg",
+    "gallery": [
+      "/media/products/hand-stitch-card-sleeve/gallery-1.svg",
+      "/media/products/hand-stitch-card-sleeve/gallery-2.svg"
+    ]
+  }
+]

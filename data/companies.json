@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "fif-trading",
+    "name": "FIF Trading PLC",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "category": {
+      "en": "Leather goods",
+      "ko": "가죽제품",
+      "ja": "レザーグッズ",
+      "zh": "皮具"
+    },
+    "summary": {
+      "en": "Handmade leather accessories produced with local artisans, focused on card wallets and compact everyday goods for export buyers.",
+      "ko": "현지 장인과 함께 만드는 핸드메이드 가죽 액세서리. 카드지갑과 소형 생활 제품을 중심으로 수출 바이어를 지원합니다.",
+      "ja": "現地職人とともに作るハンドメイドのレザーアクセサリー。カードケースなど日常使いの製品を中心に輸出バイヤーを支援します。",
+      "zh": "与当地工匠合作制作的手工皮具配件，以卡包与日常小件为主，面向出口买家。"
+    },
+    "strengths": [
+      {
+        "en": "Natural cowhide finishing",
+        "ko": "천연 소가죽 마감",
+        "ja": "天然牛革仕上げ",
+        "zh": "天然牛皮工艺"
+      },
+      {
+        "en": "Small-batch handmade production",
+        "ko": "소량 핸드메이드 생산",
+        "ja": "小ロットの手仕事生産",
+        "zh": "小批量手工生产"
+      },
+      {
+        "en": "Buyer-ready product storytelling",
+        "ko": "바이어용 제품 스토리텔링",
+        "ja": "バイヤー向けストーリー",
+        "zh": "面向买家的产品故事"
+      }
+    ],
+    "verified": true,
+    "foundedYear": 2018,
+    "employees": "11-50",
+    "exportReady": true,
+    "coverImage": "/media/companies/fif-trading/cover.svg",
+    "gallery": [
+      "/media/companies/fif-trading/gallery-1.svg",
+      "/media/companies/fif-trading/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "addis-craft-atelier",
+    "name": "Addis Craft Atelier",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "category": {
+      "en": "Fashion accessories",
+      "ko": "패션 액세서리",
+      "ja": "ファッション小物",
+      "zh": "时尚配饰"
+    },
+    "summary": {
+      "en": "Design-led leather studio creating belts, pouches, and gift-ready accessories with consistent color stories for retail partners.",
+      "ko": "벨트, 파우치, 선물용 액세서리를 만드는 디자인 중심 가죽 스튜디오. 리테일 파트너를 위한 일관된 컬러 스토리를 제공합니다.",
+      "ja": "ベルトやポーチなどギフト向け小物を手がけるデザイン主導のレザー工房。小売パートナー向けに統一感のあるカラー展開を提供します。",
+      "zh": "以设计为主的皮具工作室，制作腰带、手包与礼品配件，并为零售伙伴提供统一色彩系列。"
+    },
+    "strengths": [
+      {
+        "en": "Color-focused collections",
+        "ko": "컬러 중심 컬렉션",
+        "ja": "カラー重視のコレクション",
+        "zh": "色彩系列产品"
+      },
+      {
+        "en": "Gift packaging options",
+        "ko": "선물 패키징 옵션",
+        "ja": "ギフト包装対応",
+        "zh": "礼品包装可选"
+      },
+      {
+        "en": "Flexible sample runs",
+        "ko": "유연한 샘플 제작",
+        "ja": "柔軟なサンプル対応",
+        "zh": "灵活打样"
+      }
+    ],
+    "verified": true,
+    "foundedYear": 2020,
+    "employees": "1-10",
+    "exportReady": true,
+    "coverImage": "/media/companies/addis-craft-atelier/cover.svg",
+    "gallery": [
+      "/media/companies/addis-craft-atelier/gallery-1.svg",
+      "/media/companies/addis-craft-atelier/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "highland-hideworks",
+    "name": "Highland Hideworks",
+    "city": "Modjo",
+    "country": "Ethiopia",
+    "category": {
+      "en": "Leather materials & goods",
+      "ko": "가죽 소재·제품",
+      "ja": "レザー素材・製品",
+      "zh": "皮革材料与成品"
+    },
+    "summary": {
+      "en": "Workshop connecting tanned leather supply with finished small goods, supporting buyers who need both material insight and finished SKUs.",
+      "ko": "태닝 가죽 공급과 완제품 소품을 연결하는 워크숍. 소재 이해와 완제품 SKU가 모두 필요한 바이어를 지원합니다.",
+      "ja": "鞣し革の供給と完成品小物をつなぐ工房。素材理解と完成SKUの両方を求めるバイヤーを支援します。",
+      "zh": "连接鞣制皮革供应与成品小件的工坊，服务既需要材料洞察又需要成品SKU的买家。"
+    },
+    "strengths": [
+      {
+        "en": "Material transparency",
+        "ko": "소재 투명성",
+        "ja": "素材の透明性",
+        "zh": "材料可追溯"
+      },
+      {
+        "en": "Durable everyday goods",
+        "ko": "내구성 있는 생활 제품",
+        "ja": "耐久性のある日常製品",
+        "zh": "耐用日常产品"
+      },
+      {
+        "en": "OEM / private label discussion",
+        "ko": "OEM·자체 브랜드 협의 가능",
+        "ja": "OEM・プライベートブランド相談可",
+        "zh": "可谈OEM/自有品牌"
+      }
+    ],
+    "verified": true,
+    "foundedYear": 2015,
+    "employees": "51-100",
+    "exportReady": true,
+    "coverImage": "/media/companies/highland-hideworks/cover.svg",
+    "gallery": [
+      "/media/companies/highland-hideworks/gallery-1.svg",
+      "/media/companies/highland-hideworks/gallery-2.svg"
+    ]
+  },
+  {
+    "slug": "bole-stitch-collective",
+    "name": "Bole Stitch Collective",
+    "city": "Addis Ababa",
+    "country": "Ethiopia",
+    "category": {
+      "en": "Handmade leather & textile",
+      "ko": "핸드메이드 가죽·텍스타일",
+      "ja": "ハンドメイドレザー＆テキスタイル",
+      "zh": "手工皮具与纺织"
+    },
+    "summary": {
+      "en": "Women-led collective stitching leather and textile details into bags and accessories with social-impact production stories.",
+      "ko": "가죽과 텍스타일 디테일을 가방·액세서리에 결합하는 여성 주도 컬렉티브. 사회적 임팩트 생산 스토리를 함께 전합니다.",
+      "ja": "レザーとテキスタイルのディテールをバッグや小物に仕立てる女性主導のコレクティブ。社会的インパクトのある生産ストーリーも伝えます。",
+      "zh": "女性主导的集体工坊，将皮革与纺织细节融入箱包与配饰，并传递社会影响故事。"
+    },
+    "strengths": [
+      {
+        "en": "Women artisan network",
+        "ko": "여성 장인 네트워크",
+        "ja": "女性職人ネットワーク",
+        "zh": "女性工匠网络"
+      },
+      {
+        "en": "Impact storytelling for buyers",
+        "ko": "바이어용 임팩트 스토리",
+        "ja": "バイヤー向けインパクトストーリー",
+        "zh": "面向买家的影响力故事"
+      },
+      {
+        "en": "Custom color & stitch details",
+        "ko": "맞춤 컬러·스티치 디테일",
+        "ja": "カスタムカラー・ステッチ",
+        "zh": "定制颜色与缝线细节"
+      }
+    ],
+    "verified": true,
+    "foundedYear": 2019,
+    "employees": "11-50",
+    "exportReady": false,
+    "coverImage": "/media/companies/bole-stitch-collective/cover.svg",
+    "gallery": [
+      "/media/companies/bole-stitch-collective/gallery-1.svg",
+      "/media/companies/bole-stitch-collective/gallery-2.svg"
+    ]
+  }
+]
