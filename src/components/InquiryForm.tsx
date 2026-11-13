@@ -60,6 +60,18 @@ export function InquiryForm({
         <p className="text-[var(--muted)]">
           {isSeller ? t("subtitleSeller") : t("subtitleBuyer")}
         </p>
+        {isSeller ? (
+          <div className="border border-[var(--line)] bg-[var(--soft)] px-4 py-4 text-sm leading-relaxed text-[var(--ink-soft)]">
+            <p>{t("listingKitLead")}</p>
+            <a
+              href="/downloads/Addis-Hands-Listing-Information-Kit.docx"
+              download
+              className="mt-3 inline-flex ah-btn ah-btn-secondary"
+            >
+              {t("listingKitDownload")}
+            </a>
+          </div>
+        ) : null}
       </div>
 
       <div className="border border-[var(--line)] bg-[var(--panel)] p-6 md:p-8">
