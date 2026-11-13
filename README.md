@@ -13,12 +13,20 @@ TradeKorea-style B2B showcase connecting Ethiopian SMEs with global buyers.
 npm install
 cp .env.example .env.local
 # set ADMIN_PASSWORD and ADMIN_SESSION_SECRET in .env.local
+# optional: NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX for GA4 Realtime
 npm run dev
 ```
 
 Open [http://localhost:3000/en](http://localhost:3000/en).
 
 Admin: [http://localhost:3000/admin](http://localhost:3000/admin)
+
+### Google Analytics 4 (Realtime)
+
+1. Create a GA4 property at [Google Analytics](https://analytics.google.com/) for `addis-hands.vercel.app`
+2. Copy the Measurement ID (`G-XXXXXXXXXX`)
+3. Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` and in Vercel → Project → Settings → Environment Variables
+4. Redeploy, then open **Reports → Realtime** to see live visitors
 
 ## Admin (file-based)
 
