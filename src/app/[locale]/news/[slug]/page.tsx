@@ -2,7 +2,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import { MediaFrame } from "@/components/MediaFrame";
+import { NewsViewTracker } from "@/components/NewsViewTracker";
 import { getNewsPost, getNewsPosts } from "@/lib/news";
+import { getNewsViewCount } from "@/lib/news-views";
 import { tLocal } from "@/lib/locale";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -37,6 +39,7 @@ export default async function NewsDetailPage({
   if (!post) notFound();
 
   const t = await getTranslations("News");
+  const initialViews = await getNewsViewCount(slug);
   const paragraphs = tLocal(post.body, locale)
     .split(/\n\n+/)
     .map((part) => part.trim())
@@ -53,12 +56,19 @@ export default async function NewsDetailPage({
       </Link>
 
       <header className="mt-8 space-y-4">
-        <time
-          dateTime={post.date}
-          className="text-xs uppercase tracking-[0.16em] text-[var(--olive)]"
-        >
-          {formatDate(post.date, locale)}
-        </time>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <time
+            dateTime={post.date}
+            className="text-xs uppercase tracking-[0.16em] text-[var(--olive)]"
+          >
+            {formatDate(post.date, locale)}
+          </time>
+          <NewsViewTracker
+            slug={post.slug}
+            initialViews={initialViews}
+            className="text-xs text-[var(--muted)]"
+          />
+        </div>
         <h1 className="font-[family-name:var(--font-display)] text-4xl font-light tracking-[-0.03em] text-[var(--ink)] md:text-5xl">
           {tLocal(post.title, locale)}
         </h1>

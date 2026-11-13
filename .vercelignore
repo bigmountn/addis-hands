@@ -1,0 +1,8 @@
+node_modules
+.next
+.vercel-cache
+.git
+addis-hands-tmp
+*.pem
+.env*
+!.env.example

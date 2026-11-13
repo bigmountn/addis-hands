@@ -14,9 +14,19 @@
   },
   "Home": {
     "eyebrow": "B2B 마켓플레이스",
-    "mission": "에티오피아 SME와 글로벌 바이어를 큐레이션된 가죽·공예 제품으로 연결합니다.",
+    "headline": "에티오피아 가죽 제품을 제조사에서 직접 만나보세요",
+    "mission": "에티오피아 가죽·공예 워크숍을 둘러본 뒤, 선택한 제조사에 바로 문의하세요.",
     "ctaPrimary": "기업 둘러보기",
     "ctaSecondary": "바이어 문의하기",
+    "ctaNote": "제조사에 직접 견적을 요청하세요.",
+    "statsCompanies": "등록 기업 {count}곳",
+    "statsProducts": "제품 {count}종",
+    "statsLanguages": "문의 가능 언어 {count}개",
+    "orderingTitle": "주문은 이렇게 진행됩니다",
+    "orderingStep1": "기업과 제품을 둘러보기",
+    "orderingStep2": "문의 보내기",
+    "orderingStep3": "가격·MOQ·샘플을 제조사와 직접 협의",
+    "orderingNote": "주문은 바이어와 제조사 간에 직접 진행됩니다. 이 사이트에서는 온라인 결제를 처리하지 않습니다.",
     "featuredCompanies": "추천 기업",
     "featuredProducts": "추천 제품",
     "viewAll": "전체 보기",
@@ -79,7 +89,8 @@
     "empty": "아직 뉴스가 없습니다.",
     "back": "뉴스 목록",
     "readMore": "더 보기",
-    "sources": "참고 기사"
+    "sources": "참고 기사",
+    "views": "조회 {count}"
   },
   "Leather": {
     "eyebrow": "왜 에티오피아 가죽인가",
@@ -215,6 +226,6 @@
     "rights": "All rights reserved."
   },
   "Common": {
-    "b2bOnly": "B2B 문의 전용 · 온라인 결제 없음"
+    "b2bOnly": "B2B 문의 전용"
   }
 }

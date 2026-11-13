@@ -9,6 +9,7 @@ type Props = {
   aspectClassName?: string;
   sizes?: string;
   priority?: boolean;
+  quality?: number;
   zoomClassName?: string;
   dim?: boolean;
 };
@@ -22,6 +23,7 @@ export function MediaFrame({
   aspectClassName = "aspect-[4/3]",
   sizes = "(max-width: 768px) 100vw, 33vw",
   priority = false,
+  quality,
   zoomClassName = "ah-media-zoom",
   dim = false,
 }: Props) {
@@ -46,6 +48,7 @@ export function MediaFrame({
             fill
             sizes={sizes}
             priority={priority}
+            quality={quality}
             className={`object-cover ${zoomClassName}`}
           />
         )

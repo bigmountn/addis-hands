@@ -14,9 +14,19 @@
   },
   "Home": {
     "eyebrow": "B2Bマーケットプレイス",
-    "mission": "厳選したレザー・クラフト製品を通じて、エチオピアのSMEと世界のバイヤーをつなぎます。",
+    "headline": "エチオピアの本革製品を、作り手から直接調達する",
+    "mission": "エチオピアのレザー・クラフト工房を比較し、選んだ作り手へそのまま問い合わせできます。",
     "ctaPrimary": "企業を見る",
     "ctaSecondary": "バイヤー問い合わせ",
+    "ctaNote": "メーカーに直接見積もりを依頼できます。",
+    "statsCompanies": "掲載企業 {count}",
+    "statsProducts": "製品 {count}",
+    "statsLanguages": "問い合わせ言語 {count}",
+    "orderingTitle": "注文の流れ",
+    "orderingStep1": "企業と製品を閲覧する",
+    "orderingStep2": "問い合わせを送る",
+    "orderingStep3": "価格・MOQ・サンプルをメーカーと直接協議する",
+    "orderingNote": "注文はバイヤーとメーカーの間で直接進めます。本サイトではオンライン決済を扱いません。",
     "featuredCompanies": "注目の企業",
     "featuredProducts": "注目の製品",
     "viewAll": "すべて見る",
@@ -79,7 +89,8 @@
     "empty": "まだニュースはありません。",
     "back": "ニュース一覧",
     "readMore": "続きを読む",
-    "sources": "参考記事"
+    "sources": "参考記事",
+    "views": "{count} 回表示"
   },
   "Leather": {
     "eyebrow": "なぜエチオピアレザーか",
@@ -215,6 +226,6 @@
     "rights": "All rights reserved."
   },
   "Common": {
-    "b2bOnly": "B2B問い合わせ専用 · オンライン決済なし"
+    "b2bOnly": "B2B問い合わせ専用"
   }
 }

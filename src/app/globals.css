@@ -111,6 +111,29 @@ a {
   animation: ah-kenburns 18s ease-out forwards;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ah-rise,
+  .ah-rise-delay,
+  .ah-fade,
+  .ah-hero-media {
+    animation: none !important;
+  }
+
+  .ah-media-zoom,
+  .ah-btn {
+    transition: none !important;
+  }
+
+  .ah-btn:hover,
+  .group:hover .ah-media-zoom {
+    transform: none !important;
+  }
+}
+
 .ah-btn {
   display: inline-flex;
   align-items: center;

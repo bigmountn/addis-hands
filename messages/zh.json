@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "Addis Hands | 埃塞俄比亚SME B2B市场",
+    "title": "Addis Hands | 埃塞俄比亚SME B2B Marketplace",
     "description": "连接埃塞俄比亚皮革与手工艺SME与全球买家的B2B展示平台。"
   },
   "Nav": {
@@ -13,10 +13,20 @@
     "tagline": "Crafted by the hands of Addis"
   },
   "Home": {
-    "eyebrow": "B2B市场",
-    "mission": "通过精选皮革与手工艺产品，连接埃塞俄比亚SME与全球买家。",
+    "eyebrow": "B2B Marketplace",
+    "headline": "直接从制造商采购正宗埃塞俄比亚皮革制品",
+    "mission": "浏览埃塞俄比亚皮革与手工艺工坊，向您选定的制造商直接发送询盘。",
     "ctaPrimary": "浏览企业",
     "ctaSecondary": "提交买家询盘",
+    "ctaNote": "直接向制造商申请报价。",
+    "statsCompanies": "{count} 家企业",
+    "statsProducts": "{count} 款产品",
+    "statsLanguages": "{count} 种询盘语言",
+    "orderingTitle": "订购如何进行",
+    "orderingStep1": "浏览企业与产品",
+    "orderingStep2": "发送询盘",
+    "orderingStep3": "与制造商直接协商价格、MOQ 与样品",
+    "orderingNote": "订单由买家与制造商直接安排。本站不处理在线支付。",
     "featuredCompanies": "精选企业",
     "featuredProducts": "精选产品",
     "viewAll": "查看全部",
@@ -79,7 +89,8 @@
     "empty": "暂无新闻。",
     "back": "全部新闻",
     "readMore": "阅读更多",
-    "sources": "参考来源"
+    "sources": "参考来源",
+    "views": "{count} 次阅读"
   },
   "Leather": {
     "eyebrow": "为何选择埃塞俄比亚皮革",
@@ -215,6 +226,6 @@
     "rights": "All rights reserved."
   },
   "Common": {
-    "b2bOnly": "仅限B2B询盘 · 无在线结算"
+    "b2bOnly": "仅限B2B询盘"
   }
 }

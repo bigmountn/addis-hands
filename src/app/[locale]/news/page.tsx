@@ -1,7 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { MediaFrame } from "@/components/MediaFrame";
+import { NewsViewLabel } from "@/components/NewsViewLabel";
 import { getNewsPosts } from "@/lib/news";
+import { getNewsViewCounts } from "@/lib/news-views";
 import { tLocal } from "@/lib/locale";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -29,6 +31,7 @@ export default async function NewsIndexPage({
 
   const t = await getTranslations("News");
   const posts = await getNewsPosts();
+  const viewCounts = await getNewsViewCounts(posts.map((post) => post.slug));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
@@ -60,12 +63,19 @@ export default async function NewsIndexPage({
                   />
                 ) : null}
                 <div className="space-y-3">
-                  <time
-                    dateTime={post.date}
-                    className="text-xs uppercase tracking-[0.16em] text-[var(--olive)]"
-                  >
-                    {formatDate(post.date, locale)}
-                  </time>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <time
+                      dateTime={post.date}
+                      className="text-xs uppercase tracking-[0.16em] text-[var(--olive)]"
+                    >
+                      {formatDate(post.date, locale)}
+                    </time>
+                    <NewsViewLabel
+                      count={viewCounts?.[post.slug]}
+                      label={(count) => t("views", { count })}
+                      className="text-xs text-[var(--muted)]"
+                    />
+                  </div>
                   <h2 className="font-[family-name:var(--font-display)] text-2xl font-light tracking-[-0.02em] text-[var(--ink)] transition group-hover:text-[var(--clay)] md:text-3xl">
                     {tLocal(post.title, locale)}
                   </h2>

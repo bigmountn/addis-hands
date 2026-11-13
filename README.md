@@ -28,6 +28,17 @@ Admin: [http://localhost:3000/admin](http://localhost:3000/admin)
 3. Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in `.env.local` and in Vercel → Project → Settings → Environment Variables
 4. Redeploy, then open **Reports → Realtime** to see live visitors
 
+### News view counts (free)
+
+Uses [Upstash Redis](https://upstash.com/) free tier (no card required).
+
+1. Create a Redis database at [console.upstash.com](https://console.upstash.com/)
+2. Copy **REST URL** and **REST TOKEN**
+3. Set `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` in `.env.local` and Vercel env
+4. Redeploy — News list/detail show view counts; the same browser won’t re-count for 12 hours
+
+Without these env vars the site still works; view counts are simply hidden.
+
 ## Admin (file-based)
 
 Catalog data lives in:

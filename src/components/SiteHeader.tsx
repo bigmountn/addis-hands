@@ -21,29 +21,37 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--header)]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 md:px-6">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:gap-4 md:px-6 md:py-4.5">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src="/brand/logo-wordmark-light.png"
             alt="Addis Hands"
-            width={180}
-            height={58}
-            className="h-9 w-auto md:h-10"
+            width={500}
+            height={163}
+            sizes="(max-width: 768px) 180px, 240px"
+            quality={100}
+            className="h-12 w-auto md:h-14"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 md:flex lg:gap-6 xl:gap-7">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-[var(--ink-soft)] transition hover:text-[var(--ink)]"
+              className="whitespace-nowrap text-sm text-[var(--ink-soft)] transition hover:text-[var(--ink)]"
             >
               {link.label}
             </Link>
           ))}
-          <LanguageSwitcher />
+          <div className="shrink-0 pl-1">
+            <LanguageSwitcher />
+          </div>
         </nav>
 
         <button

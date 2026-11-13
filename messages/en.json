@@ -13,10 +13,20 @@
     "tagline": "Crafted by the hands of Addis"
   },
   "Home": {
-    "eyebrow": "B2B marketplace",
-    "mission": "Connecting Ethiopian SMEs with global buyers through curated leather and craft goods.",
+    "eyebrow": "B2B Marketplace",
+    "headline": "Source authentic Ethiopian leather, directly from makers",
+    "mission": "Browse Ethiopian leather and craft workshops, then send an inquiry straight to the makers you choose.",
     "ctaPrimary": "Browse companies",
     "ctaSecondary": "Send a buyer inquiry",
+    "ctaNote": "Request a quote directly from the manufacturer.",
+    "statsCompanies": "{count} companies",
+    "statsProducts": "{count} products",
+    "statsLanguages": "{count} inquiry languages",
+    "orderingTitle": "How ordering works",
+    "orderingStep1": "Browse companies and products",
+    "orderingStep2": "Send an inquiry",
+    "orderingStep3": "Discuss price, MOQ and samples directly with the manufacturer",
+    "orderingNote": "Orders are arranged directly between buyer and manufacturer. This site does not process online payments.",
     "featuredCompanies": "Featured companies",
     "featuredProducts": "Featured products",
     "viewAll": "View all",
@@ -79,7 +89,8 @@
     "empty": "No news yet.",
     "back": "All news",
     "readMore": "Read more",
-    "sources": "Sources"
+    "sources": "Sources",
+    "views": "{count} views"
   },
   "Leather": {
     "eyebrow": "Why source Ethiopian leather",
@@ -215,6 +226,6 @@
     "rights": "All rights reserved."
   },
   "Common": {
-    "b2bOnly": "B2B inquiry only · No online checkout"
+    "b2bOnly": "B2B inquiry only"
   }
 }
