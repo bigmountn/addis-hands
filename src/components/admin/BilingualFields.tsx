@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import type { BilingualString } from "@/data/types";
-import { emptyBilingual } from "@/lib/learn";
 
-export { emptyBilingual };
+export function emptyBilingual(): BilingualString {
+  return { en: "", am: "" };
+}
 
 export function BilingualFields({
   labelKo,
