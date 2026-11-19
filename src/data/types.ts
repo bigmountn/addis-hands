@@ -57,6 +57,10 @@ export type LearnPost = {
   /** External free course / resource */
   resourceUrl?: string;
   resourceLabel?: BilingualString;
+  /** Short blurb about the linked site, shown near the top */
+  resourceBlurb?: BilingualString;
+  /** Real screenshots of the linked site (1–2 recommended) */
+  resourceScreenshots?: string[];
 };
 
 export type Company = {

@@ -21,6 +21,8 @@ type Body = {
   gallery?: string[];
   resourceUrl?: string;
   resourceLabel?: Partial<BilingualString> | string;
+  resourceBlurb?: Partial<BilingualString> | string;
+  resourceScreenshots?: string[];
 };
 
 function isValidDate(value: string) {
@@ -99,9 +101,14 @@ export async function POST(request: Request) {
 
     const resourceUrl = String(body.resourceUrl ?? "").trim() || undefined;
     let resourceLabel: BilingualString | undefined;
+    let resourceBlurb: BilingualString | undefined;
     if (resourceUrl && body.resourceLabel) {
       resourceLabel = await ensureAmOnSave(body.resourceLabel);
       if (!resourceLabel.en) resourceLabel = undefined;
+    }
+    if (resourceUrl && body.resourceBlurb) {
+      resourceBlurb = await ensureAmOnSave(body.resourceBlurb);
+      if (!resourceBlurb.en) resourceBlurb = undefined;
     }
 
     const post: LearnPost = {
@@ -118,6 +125,10 @@ export async function POST(request: Request) {
         : [],
       resourceUrl,
       resourceLabel,
+      resourceBlurb,
+      resourceScreenshots: Array.isArray(body.resourceScreenshots)
+        ? body.resourceScreenshots.map(String).filter(Boolean)
+        : undefined,
     };
 
     await upsertLearnPost(post);

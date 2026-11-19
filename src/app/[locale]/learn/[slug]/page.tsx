@@ -1,7 +1,11 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
-import { LearnBodyPair, LearnFieldPair } from "@/components/LearnBilingual";
+import {
+  LearnBodyPair,
+  LearnFieldPair,
+  LearnPair,
+} from "@/components/LearnBilingual";
 import { MediaFrame } from "@/components/MediaFrame";
 import { getLearnPost, getLearnPosts, tLearn } from "@/lib/learn";
 import { isLearnLocale, type LearnLocale } from "@/i18n/routing";
@@ -17,6 +21,15 @@ function formatDate(date: string, locale: LearnLocale) {
     day: "numeric",
     timeZone: "UTC",
   }).format(parsed);
+}
+
+function displayHost(url: string) {
+  try {
+    const parsed = new URL(url);
+    return `${parsed.host}${parsed.pathname}`.replace(/\/$/, "");
+  } catch {
+    return url;
+  }
 }
 
 export async function generateStaticParams() {
@@ -38,6 +51,7 @@ export default async function LearnDetailPage({
 
   const tEn = await getTranslations({ locale: "en", namespace: "Learn" });
   const tAm = await getTranslations({ locale: "am", namespace: "Learn" });
+  const screenshots = (post.resourceScreenshots ?? []).filter(Boolean);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -76,6 +90,90 @@ export default async function LearnDetailPage({
         />
       </header>
 
+      {post.resourceUrl ? (
+        <aside className="mt-8 space-y-5 border border-[var(--line)] bg-[var(--soft)]/60 p-5 md:p-6">
+          <LearnPair
+            en={tEn("startHere")}
+            am={tAm("startHere")}
+            enClassName="text-xs font-bold uppercase tracking-[0.16em] text-[var(--olive)]"
+            amClassName="text-xs font-bold uppercase tracking-[0.16em] text-[var(--olive)]"
+          />
+          <a
+            href={post.resourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block break-all font-[family-name:var(--font-display)] text-xl font-light tracking-[-0.02em] text-[var(--clay)] underline-offset-4 hover:underline md:text-2xl"
+          >
+            {displayHost(post.resourceUrl)}
+          </a>
+          {post.resourceBlurb ? (
+            <LearnFieldPair
+              value={post.resourceBlurb}
+              enClassName="text-sm leading-relaxed text-[var(--ink-soft)] md:text-base"
+              amClassName="text-sm leading-relaxed text-[var(--ink-soft)] md:text-base"
+            />
+          ) : null}
+          {screenshots.length > 0 ? (
+            <div className="space-y-3">
+              <LearnPair
+                en={tEn("siteScreens")}
+                am={tAm("siteScreens")}
+                enClassName="text-xs uppercase tracking-[0.14em] text-[var(--muted)]"
+                amClassName="text-xs uppercase tracking-[0.14em] text-[var(--muted)]"
+              />
+              <div
+                className={`grid gap-3 ${
+                  screenshots.length > 1 ? "sm:grid-cols-2" : ""
+                }`}
+              >
+                {screenshots.map((src, index) => (
+                  <a
+                    key={src}
+                    href={post.resourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block overflow-hidden border border-[var(--line)] bg-white"
+                  >
+                    <MediaFrame
+                      src={src}
+                      alt={`${displayHost(post.resourceUrl)} screen ${index + 1}`}
+                      aspectClassName="aspect-[16/10]"
+                      sizes="(max-width: 768px) 100vw, 360px"
+                      zoomClassName=""
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          <div className="space-y-1 border-t border-[var(--line)] pt-4">
+            <a
+              href={post.resourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
+            >
+              {post.resourceLabel
+                ? tLearn(post.resourceLabel, "en")
+                : tEn("openResource")}{" "}
+              →
+            </a>
+            <a
+              href={post.resourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              lang="am"
+              className="block font-[family-name:var(--font-ethiopic)] text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
+            >
+              {post.resourceLabel
+                ? tLearn(post.resourceLabel, "am")
+                : tAm("openResource")}{" "}
+              →
+            </a>
+          </div>
+        </aside>
+      ) : null}
+
       {post.coverImage ? (
         <div className="mt-8">
           <MediaFrame
@@ -95,36 +193,6 @@ export default async function LearnDetailPage({
           titleForAlt={tLearn(post.title, "en")}
         />
       </div>
-
-      {post.resourceUrl ? (
-        <aside className="mt-12 space-y-2 border-t border-[var(--line)] pt-6">
-          <a
-            href={post.resourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
-          >
-            {post.resourceLabel
-              ? tLearn(post.resourceLabel, "en")
-              : tEn("openResource")}{" "}
-            →
-          </a>
-          {post.resourceLabel?.am || !post.resourceLabel ? (
-            <a
-              href={post.resourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              lang="am"
-              className="block font-[family-name:var(--font-ethiopic)] text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
-            >
-              {post.resourceLabel
-                ? tLearn(post.resourceLabel, "am")
-                : tAm("openResource")}{" "}
-              →
-            </a>
-          ) : null}
-        </aside>
-      ) : null}
     </article>
   );
 }

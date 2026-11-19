@@ -20,6 +20,8 @@ type Body = {
   gallery?: string[];
   resourceUrl?: string;
   resourceLabel?: Partial<BilingualString> | string;
+  resourceBlurb?: Partial<BilingualString> | string;
+  resourceScreenshots?: string[];
 };
 
 function isValidDate(value: string) {
@@ -112,6 +114,7 @@ export async function PUT(
         : existing.resourceUrl;
 
     let resourceLabel = existing.resourceLabel;
+    let resourceBlurb = existing.resourceBlurb;
     if (body.resourceLabel !== undefined) {
       resourceLabel = await ensureAmOnSave(
         body.resourceLabel,
@@ -119,7 +122,17 @@ export async function PUT(
       );
       if (!resourceLabel.en) resourceLabel = undefined;
     }
-    if (!resourceUrl) resourceLabel = undefined;
+    if (body.resourceBlurb !== undefined) {
+      resourceBlurb = await ensureAmOnSave(
+        body.resourceBlurb,
+        existing.resourceBlurb,
+      );
+      if (!resourceBlurb.en) resourceBlurb = undefined;
+    }
+    if (!resourceUrl) {
+      resourceLabel = undefined;
+      resourceBlurb = undefined;
+    }
 
     const post: LearnPost = {
       ...existing,
@@ -140,10 +153,15 @@ export async function PUT(
           : existing.coverImage,
       gallery:
         body.gallery !== undefined
-          ? body.gallery.map(String).filter(Boolean)
+          ? body.gallery.map((item) => String(item ?? ""))
           : existing.gallery,
       resourceUrl,
       resourceLabel,
+      resourceBlurb,
+      resourceScreenshots:
+        body.resourceScreenshots !== undefined
+          ? body.resourceScreenshots.map(String).filter(Boolean)
+          : existing.resourceScreenshots,
     };
 
     await upsertLearnPost(post);

@@ -31,6 +31,14 @@
     "resourceLabel": {
       "en": "Open AI for Everyone on Coursera",
       "am": "በCoursera ላይ ለሁሉም ሰው AI ን ይክፈቱ"
-    }
+    },
+    "resourceBlurb": {
+      "en": "AI for Everyone is Andrew Ng’s beginner course on Coursera from DeepLearning.AI. Short, non-technical videos explain AI terms, what AI can and cannot do, and how to spot useful projects in a company — about 7 hours, at your own pace. Videos can be watched free; a certificate is optional.",
+      "am": "AI ለሁሉም ሰው የ Andrew Ng ጀማሪ ኮርስ በ Coursera ከ DeepLearning.AI ነው። አጭር፣ ቴክኒካል ያልሆኑ ቪዲዮዎች AI ውሎችን፣ AI ምን ማድረግ እንደሚችል እና እንደማይችል፣ እና ጠቃሚ ፕሮጀክቶችን በአንድ ኩባንያ ውስጥ እንዴት መለየት እንደሚቻል - ለ7 ሰአታት ያህል በራስዎ ፍጥነት ያብራራሉ። ቪዲዮዎች በነጻ ሊታዩ ይችላሉ; የምስክር ወረቀት አማራጭ ነው."
+    },
+    "resourceScreenshots": [
+      "/media/learn/ai-for-everyone/site-1-coursera-hero.jpg",
+      "/media/learn/ai-for-everyone/site-2-coursera-modules.jpg"
+    ]
   }
 ]
