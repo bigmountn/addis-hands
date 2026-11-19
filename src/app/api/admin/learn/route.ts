@@ -18,6 +18,7 @@ type Body = {
   summary?: Partial<BilingualString> | string;
   body?: Partial<BilingualString> | string;
   coverImage?: string;
+  gallery?: string[];
   resourceUrl?: string;
   resourceLabel?: Partial<BilingualString> | string;
 };
@@ -112,6 +113,9 @@ export async function POST(request: Request) {
       summary,
       body: bodyText,
       coverImage: String(body.coverImage ?? "").trim() || undefined,
+      gallery: Array.isArray(body.gallery)
+        ? body.gallery.map((item) => String(item ?? ""))
+        : [],
       resourceUrl,
       resourceLabel,
     };

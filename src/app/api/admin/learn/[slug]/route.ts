@@ -17,6 +17,7 @@ type Body = {
   summary?: Partial<BilingualString> | string;
   body?: Partial<BilingualString> | string;
   coverImage?: string;
+  gallery?: string[];
   resourceUrl?: string;
   resourceLabel?: Partial<BilingualString> | string;
 };
@@ -137,6 +138,10 @@ export async function PUT(
         body.coverImage !== undefined
           ? String(body.coverImage).trim() || undefined
           : existing.coverImage,
+      gallery:
+        body.gallery !== undefined
+          ? body.gallery.map(String).filter(Boolean)
+          : existing.gallery,
       resourceUrl,
       resourceLabel,
     };

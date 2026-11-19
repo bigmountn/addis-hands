@@ -52,6 +52,8 @@ export type LearnPost = {
   summary: BilingualString;
   body: BilingualString;
   coverImage?: string;
+  /** Extra photos shown after matching body paragraph pairs */
+  gallery?: string[];
   /** External free course / resource */
   resourceUrl?: string;
   resourceLabel?: BilingualString;

@@ -1,4 +1,5 @@
 import type { BilingualString } from "@/data/types";
+import { MediaFrame } from "@/components/MediaFrame";
 import { tLearn } from "@/lib/learn";
 
 export function LearnPair({
@@ -55,7 +56,15 @@ export function LearnFieldPair({
   );
 }
 
-export function LearnBodyPair({ value }: { value: BilingualString }) {
+export function LearnBodyPair({
+  value,
+  gallery = [],
+  titleForAlt = "Learn",
+}: {
+  value: BilingualString;
+  gallery?: string[];
+  titleForAlt?: string;
+}) {
   const enParts = tLearn(value, "en")
     .split(/\n\n+/)
     .map((part) => part.trim())
@@ -69,22 +78,45 @@ export function LearnBodyPair({ value }: { value: BilingualString }) {
   return (
     <div className="space-y-8">
       {Array.from({ length: count }, (_, index) => (
-        <div key={index} className="space-y-3">
-          {enParts[index] ? (
-            <p className="text-base leading-relaxed text-[var(--ink)]/85 md:text-lg whitespace-pre-line">
-              {enParts[index]}
-            </p>
-          ) : null}
-          {amParts[index] ? (
-            <p
-              lang="am"
-              className="font-[family-name:var(--font-ethiopic)] text-base leading-relaxed text-[var(--ink-soft)] md:text-lg whitespace-pre-line"
-            >
-              {amParts[index]}
-            </p>
+        <div key={index} className="space-y-8">
+          <div className="space-y-3">
+            {enParts[index] ? (
+              <p className="text-base leading-relaxed text-[var(--ink)]/85 md:text-lg whitespace-pre-line">
+                {enParts[index]}
+              </p>
+            ) : null}
+            {amParts[index] ? (
+              <p
+                lang="am"
+                className="font-[family-name:var(--font-ethiopic)] text-base leading-relaxed text-[var(--ink-soft)] md:text-lg whitespace-pre-line"
+              >
+                {amParts[index]}
+              </p>
+            ) : null}
+          </div>
+          {gallery[index] ? (
+            <MediaFrame
+              src={gallery[index]}
+              alt={`${titleForAlt} — ${index + 1}`}
+              aspectClassName="aspect-[4/3]"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
           ) : null}
         </div>
       ))}
+      {gallery.length > count ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {gallery.slice(count).map((src, index) => (
+            <MediaFrame
+              key={src}
+              src={src}
+              alt={`${titleForAlt} — extra ${index + 1}`}
+              aspectClassName="aspect-[4/3]"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -60,6 +60,7 @@ export function LearnForm({ mode, initial }: Props) {
     initial?.resourceLabel ?? emptyBilingual(),
   );
   const [coverImage, setCoverImage] = useState(initial?.coverImage);
+  const [gallery, setGallery] = useState<string[]>(initial?.gallery ?? []);
   const [formStatus, setFormStatus] = useState<"idle" | "saving" | "error">(
     "idle",
   );
@@ -99,6 +100,7 @@ export function LearnForm({ mode, initial }: Props) {
         summary: nextSummary,
         body: nextBody,
         coverImage,
+        gallery,
         resourceUrl: resourceUrl.trim() || undefined,
         resourceLabel: nextResourceLabel,
       };
@@ -247,10 +249,11 @@ export function LearnForm({ mode, initial }: Props) {
         kind="learn"
         slug={slug.trim().toLowerCase()}
         coverImage={coverImage}
-        gallery={[]}
-        showGallery={false}
-        onChange={({ coverImage: nextCover }) => {
+        gallery={gallery}
+        showGallery
+        onChange={({ coverImage: nextCover, gallery: nextGallery }) => {
           setCoverImage(nextCover);
+          setGallery(nextGallery);
         }}
       />
 

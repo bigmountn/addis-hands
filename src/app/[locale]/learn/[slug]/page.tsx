@@ -89,7 +89,11 @@ export default async function LearnDetailPage({
       ) : null}
 
       <div className="mt-10">
-        <LearnBodyPair value={post.body} />
+        <LearnBodyPair
+          value={post.body}
+          gallery={post.gallery ?? []}
+          titleForAlt={tLearn(post.title, "en")}
+        />
       </div>
 
       {post.resourceUrl ? (
