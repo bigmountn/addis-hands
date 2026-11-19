@@ -51,7 +51,9 @@ export default async function LearnDetailPage({
 
   const tEn = await getTranslations({ locale: "en", namespace: "Learn" });
   const tAm = await getTranslations({ locale: "am", namespace: "Learn" });
+  const resourceUrl = post.resourceUrl?.trim() || undefined;
   const screenshots = (post.resourceScreenshots ?? []).filter(Boolean);
+  const resourceHost = resourceUrl ? displayHost(resourceUrl) : "";
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -90,7 +92,7 @@ export default async function LearnDetailPage({
         />
       </header>
 
-      {post.resourceUrl ? (
+      {resourceUrl ? (
         <aside className="mt-8 space-y-5 border border-[var(--line)] bg-[var(--soft)]/60 p-5 md:p-6">
           <LearnPair
             en={tEn("startHere")}
@@ -99,12 +101,12 @@ export default async function LearnDetailPage({
             amClassName="text-xs font-bold uppercase tracking-[0.16em] text-[var(--olive)]"
           />
           <a
-            href={post.resourceUrl}
+            href={resourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="block break-all font-[family-name:var(--font-display)] text-xl font-light tracking-[-0.02em] text-[var(--clay)] underline-offset-4 hover:underline md:text-2xl"
           >
-            {displayHost(post.resourceUrl)}
+            {resourceHost}
           </a>
           {post.resourceBlurb ? (
             <LearnFieldPair
@@ -129,14 +131,14 @@ export default async function LearnDetailPage({
                 {screenshots.map((src, index) => (
                   <a
                     key={src}
-                    href={post.resourceUrl}
+                    href={resourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block overflow-hidden border border-[var(--line)] bg-white"
                   >
                     <MediaFrame
                       src={src}
-                      alt={`${displayHost(post.resourceUrl)} screen ${index + 1}`}
+                      alt={`${resourceHost} screen ${index + 1}`}
                       aspectClassName="aspect-[16/10]"
                       sizes="(max-width: 768px) 100vw, 360px"
                       zoomClassName=""
@@ -148,7 +150,7 @@ export default async function LearnDetailPage({
           ) : null}
           <div className="space-y-1 border-t border-[var(--line)] pt-4">
             <a
-              href={post.resourceUrl}
+              href={resourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
@@ -159,7 +161,7 @@ export default async function LearnDetailPage({
               →
             </a>
             <a
-              href={post.resourceUrl}
+              href={resourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               lang="am"
