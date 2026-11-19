@@ -14,7 +14,7 @@ export default async function AdminLearnPage() {
             Learn
           </h2>
           <p className="text-sm text-[var(--muted)]">
-            {posts.length}개 · EN 작성 후 AM 자동 번역
+            {posts.length}개 · 가죽 SME 가이드 · EN 작성 후 AM 자동 번역 · 공개 시 EN+AM 동시 표기
           </p>
         </div>
         <Link

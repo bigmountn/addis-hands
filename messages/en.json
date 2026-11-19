@@ -95,13 +95,13 @@
   },
   "Learn": {
     "title": "Learn",
-    "subtitle": "Free AI learning for Ethiopian SME teams — practical skills for marketing and export storytelling.",
-    "empty": "The first lessons are on the way. Check back soon.",
-    "back": "All lessons",
+    "subtitle": "Practical guides for Ethiopian leather and leather-product SMEs — marketing, export, operations, quality, and tools that help the workshop grow.",
+    "empty": "The first guides are on the way. Check back soon.",
+    "back": "All guides",
     "readMore": "Read more",
     "openResource": "Open free resource",
-    "episode": "Lesson {number}",
-    "languagesNote": "Available in English and Amharic."
+    "episode": "Guide {number}",
+    "languagesNote": "Shown in English and Amharic together."
   },
   "Leather": {
     "eyebrow": "Why source Ethiopian leather",

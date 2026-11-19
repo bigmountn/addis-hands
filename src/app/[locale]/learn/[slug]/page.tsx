@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
+import { LearnBodyPair, LearnFieldPair } from "@/components/LearnBilingual";
 import { MediaFrame } from "@/components/MediaFrame";
 import { getLearnPost, getLearnPosts, tLearn } from "@/lib/learn";
 import { isLearnLocale, type LearnLocale } from "@/i18n/routing";
@@ -35,11 +36,8 @@ export default async function LearnDetailPage({
   const post = await getLearnPost(slug);
   if (!post) notFound();
 
-  const t = await getTranslations("Learn");
-  const paragraphs = tLearn(post.body, locale)
-    .split(/\n\n+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
+  const tEn = await getTranslations({ locale: "en", namespace: "Learn" });
+  const tAm = await getTranslations({ locale: "am", namespace: "Learn" });
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
@@ -47,36 +45,42 @@ export default async function LearnDetailPage({
         href="/learn"
         className="text-sm font-medium text-[var(--clay)] underline-offset-4 hover:underline"
       >
-        ← {t("back")}
+        ← {tEn("back")} / {tAm("back")}
       </Link>
 
-      <header className="mt-8 space-y-4">
+      <header className="mt-8 space-y-5">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           {post.episode != null ? (
             <span className="text-xs uppercase tracking-[0.16em] text-[var(--clay)]">
-              {t("episode", { number: post.episode })}
+              {tEn("episode", { number: post.episode })} ·{" "}
+              {tAm("episode", { number: post.episode })}
             </span>
           ) : null}
           <time
             dateTime={post.date}
             className="text-xs uppercase tracking-[0.16em] text-[var(--olive)]"
           >
-            {formatDate(post.date, locale)}
+            {formatDate(post.date, "en")}
           </time>
         </div>
-        <h1 className="font-[family-name:var(--font-display)] text-4xl font-light tracking-[-0.03em] text-[var(--ink)] md:text-5xl">
-          {tLearn(post.title, locale)}
-        </h1>
-        <p className="text-lg leading-relaxed text-[var(--ink-soft)]">
-          {tLearn(post.summary, locale)}
-        </p>
+        <LearnFieldPair
+          value={post.title}
+          as="h1"
+          enClassName="font-[family-name:var(--font-display)] text-4xl font-light tracking-[-0.03em] text-[var(--ink)] md:text-5xl"
+          amClassName="font-[family-name:var(--font-display)] text-3xl font-light tracking-[-0.03em] text-[var(--ink-soft)] md:text-4xl"
+        />
+        <LearnFieldPair
+          value={post.summary}
+          enClassName="text-lg leading-relaxed text-[var(--ink-soft)]"
+          amClassName="text-lg leading-relaxed text-[var(--ink-soft)]"
+        />
       </header>
 
       {post.coverImage ? (
         <div className="mt-8">
           <MediaFrame
             src={post.coverImage}
-            alt={tLearn(post.title, locale)}
+            alt={tLearn(post.title, "en")}
             aspectClassName="aspect-[16/9]"
             sizes="(max-width: 768px) 100vw, 768px"
             priority
@@ -84,30 +88,37 @@ export default async function LearnDetailPage({
         </div>
       ) : null}
 
-      <div className="mt-10 space-y-6">
-        {paragraphs.map((paragraph, index) => (
-          <p
-            key={`${index}-${paragraph.slice(0, 24)}`}
-            className="text-base leading-relaxed text-[var(--ink)]/85 md:text-lg whitespace-pre-line"
-          >
-            {paragraph}
-          </p>
-        ))}
+      <div className="mt-10">
+        <LearnBodyPair value={post.body} />
       </div>
 
       {post.resourceUrl ? (
-        <aside className="mt-12 border-t border-[var(--line)] pt-6">
+        <aside className="mt-12 space-y-2 border-t border-[var(--line)] pt-6">
           <a
             href={post.resourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
+            className="block text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
           >
             {post.resourceLabel
-              ? tLearn(post.resourceLabel, locale)
-              : t("openResource")}{" "}
+              ? tLearn(post.resourceLabel, "en")
+              : tEn("openResource")}{" "}
             →
           </a>
+          {post.resourceLabel?.am || !post.resourceLabel ? (
+            <a
+              href={post.resourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              lang="am"
+              className="block font-[family-name:var(--font-ethiopic)] text-sm font-semibold text-[var(--clay)] underline-offset-4 hover:underline"
+            >
+              {post.resourceLabel
+                ? tLearn(post.resourceLabel, "am")
+                : tAm("openResource")}{" "}
+              →
+            </a>
+          ) : null}
         </aside>
       ) : null}
     </article>

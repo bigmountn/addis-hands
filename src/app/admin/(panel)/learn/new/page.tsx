@@ -8,8 +8,8 @@ export default function AdminNewLearnPage() {
           Learn 등록 (New lesson)
         </h2>
         <p className="text-sm text-[var(--muted)]">
-          영어(EN)로 작성하세요. 암하릭(AM)은 자동 번역 버튼 또는 저장 시
-          채워집니다.
+          가죽 SME 업무 가이드를 영어(EN)로 작성하세요. 암하릭(AM)은 자동 번역
+          버튼 또는 저장 시 채워지며, 공개 페이지에는 EN·AM이 함께 표시됩니다.
         </p>
       </div>
       <LearnForm mode="create" />
