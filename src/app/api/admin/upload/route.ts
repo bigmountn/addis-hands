@@ -22,9 +22,14 @@ export async function POST(request: Request) {
     const role = String(form.get("role") ?? "cover");
     const file = form.get("file");
 
-    if (kind !== "company" && kind !== "product" && kind !== "news") {
+    if (
+      kind !== "company" &&
+      kind !== "product" &&
+      kind !== "news" &&
+      kind !== "learn"
+    ) {
       return NextResponse.json(
-        { error: "kind는 company, product 또는 news여야 합니다." },
+        { error: "kind는 company, product, news 또는 learn이어야 합니다." },
         { status: 400 },
       );
     }
@@ -50,7 +55,13 @@ export async function POST(request: Request) {
     }
 
     const folder =
-      kind === "company" ? "companies" : kind === "product" ? "products" : "news";
+      kind === "company"
+        ? "companies"
+        : kind === "product"
+          ? "products"
+          : kind === "learn"
+            ? "learn"
+            : "news";
     const safeRole =
       role === "cover"
         ? "cover"

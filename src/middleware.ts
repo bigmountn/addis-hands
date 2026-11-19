@@ -1,12 +1,22 @@
 import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
-import { routing } from "./i18n/routing";
+import { isLearnLocale, routing } from "./i18n/routing";
 import { ADMIN_COOKIE, verifyAdminSessionToken } from "./lib/admin-auth";
 
 const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Learn is EN + Amharic only — send other locales to English.
+  const learnLocaleMatch = pathname.match(
+    /^\/(en|am|ko|ja|zh)(\/learn(?:\/.*)?)\/?$/,
+  );
+  if (learnLocaleMatch && !isLearnLocale(learnLocaleMatch[1])) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/en${learnLocaleMatch[2]}`;
+    return NextResponse.redirect(url);
+  }
 
   if (pathname.startsWith("/api/admin")) {
     return NextResponse.next();
@@ -40,7 +50,7 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     "/",
-    "/(en|ko|ja|zh)/:path*",
+    "/(en|am|ko|ja|zh)/:path*",
     "/admin",
     "/admin/:path*",
     "/((?!api|_next|_vercel|.*\\..*).*)",

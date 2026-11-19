@@ -53,7 +53,7 @@ export function CompanyForm({ mode, initial }: Props) {
       .split("\n")
       .map((line) => line.trim())
       .filter(Boolean)
-      .map((en) => ({ en, ko: "", ja: "", zh: "" }));
+      .map((en) => ({ en, am: "", ko: "", ja: "", zh: "" }));
 
     const payload = {
       slug: slug.trim().toLowerCase(),

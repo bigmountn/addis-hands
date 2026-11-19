@@ -1,6 +1,9 @@
-import type { AppLocale } from "@/i18n/routing";
+import type { AppLocale, LearnLocale } from "@/i18n/routing";
 
 export type LocalizedString = Record<AppLocale, string>;
+
+/** Learn section copy — English + Amharic only */
+export type BilingualString = Record<LearnLocale, string>;
 
 export type SocialLinks = {
   website?: string;
@@ -34,6 +37,24 @@ export type NewsPost = {
   gallery?: string[];
   /** Optional press / reference links */
   sources?: NewsSource[];
+};
+
+export type LearnStatus = "draft" | "published";
+
+export type LearnPost = {
+  slug: string;
+  /** ISO date string YYYY-MM-DD */
+  date: string;
+  status?: LearnStatus;
+  /** Series episode number, optional */
+  episode?: number;
+  title: BilingualString;
+  summary: BilingualString;
+  body: BilingualString;
+  coverImage?: string;
+  /** External free course / resource */
+  resourceUrl?: string;
+  resourceLabel?: BilingualString;
 };
 
 export type Company = {

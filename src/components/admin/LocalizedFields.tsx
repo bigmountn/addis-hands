@@ -1,17 +1,21 @@
 "use client";
 
 import type { LocalizedString } from "@/data/types";
+import { emptyLocalized } from "@/lib/localized";
 
-const locales: Array<{ code: keyof LocalizedString; label: string; required?: boolean }> = [
+export { emptyLocalized };
+
+const locales: Array<{
+  code: keyof LocalizedString;
+  label: string;
+  required?: boolean;
+}> = [
   { code: "en", label: "영어 EN", required: true },
+  { code: "am", label: "암하릭 AM" },
   { code: "ko", label: "한국어 KO" },
   { code: "ja", label: "일본어 JA" },
   { code: "zh", label: "중국어 ZH" },
 ];
-
-export function emptyLocalized(): LocalizedString {
-  return { en: "", ko: "", ja: "", zh: "" };
-}
 
 export function LocalizedFields({
   labelKo,
@@ -45,7 +49,7 @@ export function LocalizedFields({
               <textarea
                 rows={3}
                 required={locale.required}
-                value={value[locale.code]}
+                value={value[locale.code] ?? ""}
                 onChange={(event) =>
                   onChange({ ...value, [locale.code]: event.target.value })
                 }
@@ -54,7 +58,7 @@ export function LocalizedFields({
             ) : (
               <input
                 required={locale.required}
-                value={value[locale.code]}
+                value={value[locale.code] ?? ""}
                 onChange={(event) =>
                   onChange({ ...value, [locale.code]: event.target.value })
                 }

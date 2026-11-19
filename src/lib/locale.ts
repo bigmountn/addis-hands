@@ -5,5 +5,7 @@ export function tLocal(
   value: LocalizedString,
   locale: AppLocale,
 ): string {
-  return value[locale] ?? value.en;
+  const localized = value[locale]?.trim();
+  if (localized) return localized;
+  return value.en?.trim() || Object.values(value).find((v) => v?.trim()) || "";
 }

@@ -50,7 +50,7 @@ function optionalLocalized(
   if (value === undefined || value === null) return undefined;
   if (typeof value === "string" && !value.trim()) return undefined;
   if (typeof value !== "string") {
-    const hasAny = ["en", "ko", "ja", "zh"].some(
+    const hasAny = ["en", "am", "ko", "ja", "zh"].some(
       (locale) => Boolean(value[locale as keyof LocalizedString]?.trim()),
     );
     if (!hasAny) return undefined;

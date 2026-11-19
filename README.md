@@ -2,7 +2,7 @@
 
 TradeKorea-style B2B showcase connecting Ethiopian SMEs with global buyers.
 
-- English default, plus Korean / Japanese / Chinese
+- English default, plus Amharic / Korean / Japanese / Chinese
 - SME profiles, products, About story, buyer inquiry form
 - Inquiries go to `info@bigmountn.com` (via Resend when configured)
 - File-based admin at `/admin` (companies, products, news, image upload)
@@ -50,7 +50,7 @@ Catalog data lives in:
 
 Sign in with `ADMIN_PASSWORD`. The session cookie is signed with `ADMIN_SESSION_SECRET`.
 
-Admin UI is Korean-primary with English field labels. English content is required; KO/JA/ZH are optional (empty locales fall back to English on save).
+Admin UI is Korean-primary with English field labels. English content is required; AM/KO/JA/ZH are optional (empty locales fall back to English on save).
 
 ## Photos
 

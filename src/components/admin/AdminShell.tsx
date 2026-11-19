@@ -8,6 +8,7 @@ const links = [
   { href: "/admin/companies", label: "회사 (Companies)" },
   { href: "/admin/products", label: "제품 (Products)" },
   { href: "/admin/news", label: "뉴스 (News)" },
+  { href: "/admin/learn", label: "Learn" },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {

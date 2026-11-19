@@ -1,14 +1,16 @@
 import Link from "next/link";
 import { getCompanies, getProducts } from "@/lib/catalog";
+import { getLearnPosts } from "@/lib/learn";
 import { getNewsPosts } from "@/lib/news";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboardPage() {
-  const [companies, products, news] = await Promise.all([
+  const [companies, products, news, learn] = await Promise.all([
     getCompanies(),
     getProducts(),
     getNewsPosts({ includeDrafts: true }),
+    getLearnPosts({ includeDrafts: true }),
   ]);
 
   return (
@@ -18,11 +20,11 @@ export default async function AdminDashboardPage() {
           대시보드 (Dashboard)
         </h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          회사·제품·뉴스 데이터를 JSON 파일로 관리합니다.
+          회사·제품·뉴스·Learn 데이터를 JSON 파일로 관리합니다.
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="border border-[var(--line)] bg-white p-6">
           <p className="text-sm text-[var(--muted)]">회사 (Companies)</p>
           <p className="mt-2 font-[family-name:var(--font-display)] text-4xl">
@@ -59,6 +61,18 @@ export default async function AdminDashboardPage() {
             목록 보기 →
           </Link>
         </div>
+        <div className="border border-[var(--line)] bg-white p-6">
+          <p className="text-sm text-[var(--muted)]">Learn</p>
+          <p className="mt-2 font-[family-name:var(--font-display)] text-4xl">
+            {learn.length}
+          </p>
+          <Link
+            href="/admin/learn"
+            className="mt-4 inline-block text-sm text-[var(--leather)]"
+          >
+            목록 보기 →
+          </Link>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-3">
@@ -79,6 +93,12 @@ export default async function AdminDashboardPage() {
           className="border border-[var(--ink)] px-4 py-2.5 text-sm"
         >
           뉴스 등록 (New news)
+        </Link>
+        <Link
+          href="/admin/learn/new"
+          className="border border-[var(--ink)] px-4 py-2.5 text-sm"
+        >
+          Learn 등록 (New lesson)
         </Link>
         <Link
           href="/en"

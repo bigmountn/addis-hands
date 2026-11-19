@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 type Props = {
-  kind: "company" | "product" | "news";
+  kind: "company" | "product" | "news" | "learn";
   slug: string;
   coverImage?: string;
   logoImage?: string;

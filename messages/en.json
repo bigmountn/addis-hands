@@ -9,6 +9,7 @@
     "about": "About",
     "leather": "Ethiopian Leather",
     "news": "News",
+    "learn": "Learn",
     "inquire": "Inquire",
     "tagline": "Crafted by the hands of Addis"
   },
@@ -91,6 +92,16 @@
     "readMore": "Read more",
     "sources": "Sources",
     "views": "{count} views"
+  },
+  "Learn": {
+    "title": "Learn",
+    "subtitle": "Free AI learning for Ethiopian SME teams — practical skills for marketing and export storytelling.",
+    "empty": "The first lessons are on the way. Check back soon.",
+    "back": "All lessons",
+    "readMore": "Read more",
+    "openResource": "Open free resource",
+    "episode": "Lesson {number}",
+    "languagesNote": "Available in English and Amharic."
   },
   "Leather": {
     "eyebrow": "Why source Ethiopian leather",

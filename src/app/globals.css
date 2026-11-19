@@ -180,6 +180,17 @@ a {
   color: var(--ink);
 }
 
+/* Amharic (Geʽez) — reuse Ethiopic face for both body and display slots */
+html[lang="am"] {
+  --font-display: var(--font-ethiopic);
+  --font-body: var(--font-ethiopic);
+}
+
+html[lang="am"] .ah-section-title {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 .ah-eyebrow {
   font-size: 0.75rem;
   font-weight: 700;

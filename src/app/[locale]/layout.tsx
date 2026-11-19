@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Figtree, Newsreader } from "next/font/google";
+import { Figtree, Newsreader, Noto_Sans_Ethiopic } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -21,6 +21,12 @@ const body = Figtree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
+});
+
+const ethiopic = Noto_Sans_Ethiopic({
+  subsets: ["ethiopic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ethiopic",
 });
 
 export function generateStaticParams() {
@@ -59,10 +65,18 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const isAmharic = locale === "am";
 
   return (
-    <html lang={locale} className={`${display.variable} ${body.variable} h-full`}>
-      <body className="flex min-h-full flex-col antialiased">
+    <html
+      lang={locale}
+      className={`${display.variable} ${body.variable} ${ethiopic.variable} h-full`}
+    >
+      <body
+        className={`flex min-h-full flex-col antialiased ${
+          isAmharic ? "font-[family-name:var(--font-ethiopic)]" : ""
+        }`}
+      >
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />
           <main className="flex-1">{children}</main>

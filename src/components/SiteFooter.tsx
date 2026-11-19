@@ -14,6 +14,7 @@ export async function SiteFooter() {
     { href: "/companies" as const, label: tNav("companies") },
     { href: "/products" as const, label: tNav("products") },
     { href: "/news" as const, label: tNav("news") },
+    { href: "/learn" as const, label: tNav("learn") },
   ];
 
   return (

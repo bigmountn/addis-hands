@@ -17,6 +17,7 @@ export function SiteHeader() {
     { href: "/products" as const, label: t("products") },
     { href: "/inquire" as const, label: t("inquire") },
     { href: "/news" as const, label: t("news") },
+    { href: "/learn" as const, label: t("learn") },
   ];
 
   return (
@@ -32,14 +33,14 @@ export function SiteHeader() {
             alt="Addis Hands"
             width={500}
             height={163}
-            sizes="(max-width: 768px) 180px, 240px"
+            sizes="(max-width: 768px) 160px, 200px"
             quality={100}
-            className="h-12 w-auto md:h-14"
+            className="h-10 w-auto md:h-12"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 md:flex lg:gap-6 xl:gap-7">
+        <nav className="hidden min-w-0 flex-1 flex-wrap items-center justify-end gap-x-3 gap-y-1 md:flex lg:gap-x-4 xl:gap-x-5">
           {links.map((link) => (
             <Link
               key={link.href}

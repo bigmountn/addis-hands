@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree, Newsreader } from "next/font/google";
+import { Figtree, Newsreader, Noto_Sans_Ethiopic } from "next/font/google";
 import "../globals.css";
 
 const display = Newsreader({
@@ -14,6 +14,12 @@ const body = Figtree({
   variable: "--font-body",
 });
 
+const ethiopic = Noto_Sans_Ethiopic({
+  subsets: ["ethiopic"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ethiopic",
+});
+
 export const metadata: Metadata = {
   title: "Addis Hands Admin",
   robots: { index: false, follow: false },
@@ -25,7 +31,10 @@ export default function AdminRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${display.variable} ${body.variable} h-full`}>
+    <html
+      lang="ko"
+      className={`${display.variable} ${body.variable} ${ethiopic.variable} h-full`}
+    >
       <body className="min-h-full antialiased">{children}</body>
     </html>
   );
